@@ -1,0 +1,57 @@
+header {
+	text-align: center;
+	padding: 25px 25px 30px;
+	margin-bottom: 25px;
+	border-bottom: medium solid #275d8b;
+	background-color: #337ab7;
+	color: #EEEEEE;
+	text-shadow: 2px 2px 2px #094C83;
+}
+
+.btn {
+	margin-bottom: 30px;
+}
+
+th {
+	text-align: center;
+}
+
+body {
+	background-color: #282828;
+	color: #EEEEEE;
+	text-shadow: 2px 2px 2px #008A52;
+}
+
+glyphicon-ok {
+	border-radius: 0 4px 4px 0 ;
+}
+.glyphicon-pencil, .glyphicon-trash {
+	border-radius: 0px;
+}
+
+input[type="text"][disabled], textarea {
+	color: #888888;
+	background-color: #000000;
+}
+
+input[type="text"][disabled] {
+	border: solid 3px #252525;
+	border-radius: 4px;
+}
+
+input[type="text"], textarea {
+	color: #EEEEEE;
+	background-color: #141414;
+}
+
+input[type="text"] {
+	border: solid 3px #454545;
+	border-radius: 4px;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    padding-top: 8px;
+    padding-bottom: 4px
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #454545;
