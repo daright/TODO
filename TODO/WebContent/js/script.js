@@ -12,7 +12,7 @@ $(document).ready(function() {
 		});
 		$(this).html($(""));
 	});
-	
+
 	$(".uncheck").hover(function() {
 		$(this).parent().siblings().children().css({
 			'position' : 'relative',
@@ -26,7 +26,7 @@ $(document).ready(function() {
 		});
 		$(this).html($(""));
 	});
-	
+
 	$(".glyphicon-pencil").hover(function() {
 		$(this).parent().siblings().children().css({
 			'position' : 'relative',
@@ -40,7 +40,7 @@ $(document).ready(function() {
 		});
 		$(this).html($(""));
 	});
-	
+
 	$(".glyphicon-trash").hover(function() {
 		$(this).parent().siblings().children().css({
 			'position' : 'relative',
@@ -54,7 +54,7 @@ $(document).ready(function() {
 		});
 		$(this).html($(""));
 	});
-	
+
 	$(".glyphicon-plus").hover(function() {
 		$(this).parent().siblings().children().css({
 			'position' : 'relative',

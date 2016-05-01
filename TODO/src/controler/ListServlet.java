@@ -96,6 +96,14 @@ public class ListServlet extends HttpServlet {
 				iditem = iditem.substring("uncheck".length());
 				uncheck(Integer.parseInt(iditem), login, items);
 			}
+			if (iditem.startsWith("sublist")) {
+				iditem = iditem.substring("sublist".length());
+				session.setAttribute("idparent", iditem);
+				String item = request.getParameter("item" + iditem);
+				session.setAttribute("parent", item);
+				System.out.println(item);
+				url = "./sublist";
+			}
 			request.setAttribute("action", "update");
 			session.setAttribute("items", items);
 		}

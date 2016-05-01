@@ -55,7 +55,6 @@
 					<c:forEach var="item" items="${items}">
 						<tr>
 							<td>
-
 								<div class="form">
 									<form action="list" method="post" class="form" role="form">
 										<c:if test="${item.checked}">
@@ -73,7 +72,7 @@
 												<input type="hidden" name="action" value="update" /> <input type="text" name="item${item.iditem}" class="form-control" value="${item.item}" /> <span class="input-group-btn">
 													<button type="submit" name="update" value="update${item.iditem}" class="btn btn-primary glyphicon glyphicon-pencil"></button>
 												</span> <span class="input-group-btn">
-													<button type="submit" name="update" value="addToItem${item.iditem}" class="btn btn-info glyphicon glyphicon-plus"></button>
+													<button type="submit" name="update" value="sublist${item.iditem}" class="btn btn-info glyphicon glyphicon-plus"></button>
 												</span> <span class="input-group-btn">
 													<button type="submit" name="update" value="check${item.iditem}" class="btn btn-success glyphicon glyphicon-ok check"></button>
 												</span>

@@ -63,11 +63,12 @@ public class LineItemDAO {
 
 	public static void updateItem(LineItem lineItem) {
 		PreparedStatement statement = null;
-		String query = "UPDATE list SET item = ? iditem = ?;";
+		String query = "UPDATE list SET item = ? WHERE iditem = ? AND login = ?;";
 		try {
 			statement = Database.getConnection().prepareStatement(query);
 			statement.setString(1, lineItem.getItem());
 			statement.setInt(2, lineItem.getIditem());
+			statement.setString(3, lineItem.getLogin());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Could not update item " + e.getMessage());
