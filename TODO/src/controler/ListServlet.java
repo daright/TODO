@@ -30,7 +30,11 @@ public class ListServlet extends HttpServlet {
 		if (login == null) {
 			response.sendRedirect("./login.jsp");
 		}
-		int itemCount = (int) session.getAttribute("itemCount");
+		int itemCount = 0;
+		if (session.getAttribute("itemCount") != null) {
+			itemCount = (int) session.getAttribute("itemCount");	
+		}
+		
 		if (itemCount == 0) {
 			itemCount = UserDAO.getItemCount(login);
 		}

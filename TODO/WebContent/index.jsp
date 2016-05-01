@@ -30,13 +30,18 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10">
-				<form action="list" method="post" class="form" role="form">
-					<div class="input-group">
-						<input type="hidden" name="action" value="add" /> <input type="text" name="item" class="form-control" placeholder="Add something you wish to do..." autofocus /> <span class="input-group-btn">
-							<button type="submit" value="Add" class="btn btn-success">Add</button>
-						</span>
-					</div>
-				</form>
+				<p class="lead hello">
+					Hello ${login}!
+				</p>
+				<div class="form">
+					<form action="list" method="post" class="form" role="form">
+						<div class="input-group">
+							<input type="hidden" name="action" value="add" /> <input type="text" name="item" class="form-control" placeholder="Add something you wish to do..." autofocus /> <span class="input-group-btn">
+								<button type="submit" value="Add" class="btn btn-success">Add</button>
+							</span>
+						</div>
+					</form>
+				</div>
 			</div>
 			<div class="col-md-1"></div>
 		</div>
@@ -45,33 +50,38 @@
 			<div class="col-md-10">
 				<table class="table table">
 					<tr>
-						<th class="lead">Hello ${login}! <c:if test="${items.size() > 0}">Some things to do...</c:if>
-							<c:if test="${items.size() == 0 || items == null}">Add some things you want to do...</c:if></th>
+						<th><p class="lead"><c:if test="${items.size() > 0}">Here are your added tasks:</c:if></p></th>
 					</tr>
 					<c:forEach var="item" items="${items}">
 						<tr>
 							<td>
-								<form action="list" method="post" class="form" role="form">
-									<c:if test="${item.checked}">
-										<div class="input-group">
-											<input type="hidden" name="action" value="update" /> <input type="text" name="item${item.iditem}" class="form-control" value="${item.item}" disabled="disabled" /> <span
-												class="input-group-btn">
-												<button type="submit" name="update" value="delete${item.iditem}" class="btn btn-danger glyphicon glyphicon-trash"></button>
-											</span> <span class="input-group-btn">
-												<button type="submit" name="update" value="uncheck${item.iditem}" class="btn btn-primary glyphicon glyphicon-ok"></button>
-											</span>
-										</div>
-									</c:if>
-									<c:if test="${!item.checked}">
-										<div class="input-group">
-											<input type="hidden" name="action" value="update" /> <input type="text" name="item${item.iditem}" class="form-control" value="${item.item}" /> <span class="input-group-btn">
-												<button type="submit" name="update" value="update${item.iditem}" class="btn btn-primary glyphicon glyphicon-pencil"></button>
-											</span> <span class="input-group-btn">
-												<button type="submit" name="update" value="check${item.iditem}" class="btn btn-success glyphicon glyphicon-ok"></button>
-											</span>
-										</div>
-									</c:if>
-								</form>
+
+								<div class="form">
+									<form action="list" method="post" class="form" role="form">
+										<c:if test="${item.checked}">
+											<div class="input-group">
+												<input type="hidden" name="action" value="update" /> <input type="text" name="item${item.iditem}" class="form-control" value="${item.item}" disabled="disabled" /> <span
+													class="input-group-btn">
+													<button type="submit" name="update" value="delete${item.iditem}" class="btn btn-danger glyphicon glyphicon-trash"></button>
+												</span> <span class="input-group-btn">
+													<button type="submit" name="update" value="uncheck${item.iditem}" class="btn btn-primary glyphicon glyphicon-ok uncheck"></button>
+												</span>
+											</div>
+										</c:if>
+										<c:if test="${!item.checked}">
+											<div class="input-group">
+												<input type="hidden" name="action" value="update" /> <input type="text" name="item${item.iditem}" class="form-control" value="${item.item}" /> <span class="input-group-btn">
+													<button type="submit" name="update" value="update${item.iditem}" class="btn btn-primary glyphicon glyphicon-pencil"></button>
+												</span> <span class="input-group-btn">
+													<button type="submit" name="update" value="addToItem${item.iditem}" class="btn btn-info glyphicon glyphicon-plus"></button>
+												</span> <span class="input-group-btn">
+													<button type="submit" name="update" value="check${item.iditem}" class="btn btn-success glyphicon glyphicon-ok check"></button>
+												</span>
+											</div>
+										</c:if>
+									</form>
+								</div>
+
 							</td>
 						</tr>
 					</c:forEach>
@@ -82,5 +92,6 @@
 	</div>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
