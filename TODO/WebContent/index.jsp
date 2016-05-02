@@ -13,6 +13,9 @@
 <title>TODO list</title>
 </head>
 <body>
+	<div class="logout">
+		<a href="./logout" class="btn btn-default glyphicon glyphicon-log-out"><p>Logout</p></a>
+	</div>
 	<header>
 		<div class="container">
 			<div class="row">
@@ -21,7 +24,6 @@
 					<h1>Your Personal TODO List</h1>
 				</div>
 				<div class="col-md-2">
-					<a href="./logout" class="btn btn-default glyphicon glyphicon-log-out"></a>
 				</div>
 			</div>
 		</div>
