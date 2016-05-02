@@ -101,7 +101,6 @@ public class ListServlet extends HttpServlet {
 				session.setAttribute("idparent", iditem);
 				String item = request.getParameter("item" + iditem);
 				session.setAttribute("parent", item);
-				System.out.println(item);
 				url = "./sublist";
 			}
 			request.setAttribute("action", "update");
@@ -115,9 +114,10 @@ public class ListServlet extends HttpServlet {
 		int count = 0;
 		for (LineItem item : items) {
 			if (item.getIditem() == lineItem.getIditem()) {
-				items.set(count, item);
-				count++;
+				items.set(count, lineItem);
+				break;
 			}
+			count++;
 		}
 	}
 
