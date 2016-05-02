@@ -127,19 +127,32 @@ public class LineItemDAO {
 	}
 
 	public static void deleteItem(int iditem, String login) {
-		PreparedStatement statement = null;
-		String query = "DELETE FROM list WHERE iditem = ? AND login = ?;";
+		PreparedStatement s1 = null;
+		PreparedStatement s2 = null;
+		String query1 = "DELETE FROM list WHERE iditem = ? AND login = ?;";
+		String query2 = "DELETE FROM sublist WHERE idparent = ? AND login = ?;";
 		try {
-			statement = Database.getConnection().prepareStatement(query);
-			statement.setInt(1, iditem);
-			statement.setString(2, login);
-			statement.executeUpdate();
+			s1 = Database.getConnection().prepareStatement(query1);
+			s1.setInt(1, iditem);
+			s1.setString(2, login);
+			s2 = Database.getConnection().prepareStatement(query2);
+			s2.setInt(1, iditem);
+			s2.setString(2, login);
+			s2.executeUpdate();
+			s1.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Could not delete item " + e.getMessage());
 		} finally {
-			if (statement != null) {
+			if (s1 != null) {
 				try {
-					statement.close();
+					s1.close();
+				} catch (SQLException e) {
+					System.out.println("Could not close statement");
+				}
+			}
+			if (s2 != null) {
+				try {
+					s2.close();
 				} catch (SQLException e) {
 					System.out.println("Could not close statement");
 				}
