@@ -5,6 +5,8 @@ public class LineItem {
 	private String item;
 	private boolean checked;
 	private String login;
+	private int numOfSubitems;
+	private int numOfCheckedSubitems;
 
 	public LineItem(int iditem, String item, boolean checked, String login) {
 		this.iditem = iditem;
@@ -43,6 +45,22 @@ public class LineItem {
 
 	public void setLogin(String login) {
 		this.login = login;
+	}
+
+	public int getNumOfSubitems() {
+		return numOfSubitems;
+	}
+
+	public void setNumOfSubitems(int numOfSubitems) {
+		this.numOfSubitems = numOfSubitems;
+	}
+
+	public int getNumOfCheckedSubitems() {
+		return numOfCheckedSubitems;
+	}
+
+	public void setNumOfCheckedSubitems(int numOfCheckedSubitems) {
+		this.numOfCheckedSubitems = numOfCheckedSubitems;
 	}
 
 	@Override

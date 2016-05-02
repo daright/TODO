@@ -23,8 +23,7 @@
 				<div class="col-md-8">
 					<h1>Your Personal TODO List</h1>
 				</div>
-				<div class="col-md-2">
-				</div>
+				<div class="col-md-2"></div>
 			</div>
 		</div>
 	</header>
@@ -32,9 +31,7 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10">
-				<p class="lead hello">
-					Hello ${login}!
-				</p>
+				<p class="lead hello">Hello ${login}!</p>
 				<div class="form">
 					<form action="list" method="post" class="form" role="form">
 						<div class="input-group">
@@ -52,7 +49,9 @@
 			<div class="col-md-10">
 				<table class="table table">
 					<tr>
-						<th><p class="lead"><c:if test="${items.size() > 0}">Here are your added tasks:</c:if></p></th>
+						<th><p class="lead">
+								<c:if test="${items.size() > 0}">Here are your added tasks:</c:if>
+							</p></th>
 					</tr>
 					<c:forEach var="item" items="${items}">
 						<tr>
@@ -82,7 +81,7 @@
 										</c:if>
 									</form>
 								</div>
-
+								<c:if test="${item.numOfSubitems > 0}"><p>${item.numOfCheckedSubitems}/${item.numOfSubitems} Completed</p></c:if>
 							</td>
 						</tr>
 					</c:forEach>

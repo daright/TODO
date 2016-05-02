@@ -159,4 +159,56 @@ public class LineItemDAO {
 			}
 		}
 	}
+	
+	public static int getNumOfSubitems(int iditem, String login) {
+		int result = 0;
+		PreparedStatement statement = null;
+		String query = "SELECT COUNT(*) FROM sublist WHERE idparent = ? AND login = ?;";
+		try {
+			statement = Database.getConnection().prepareStatement(query);
+			statement.setInt(1, iditem);
+			statement.setString(2, login);
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				result = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			System.out.println("Could not delete item " + e.getMessage());
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+					System.out.println("Could not close statement");
+				}
+			}
+		}
+		return result;
+	}
+	
+	public static int getNumOfCheckedSubitems(int iditem, String login) {
+		int result = 0;
+		PreparedStatement statement = null;
+		String query = "SELECT COUNT(*) FROM sublist WHERE idparent = ? AND login = ? AND checked = 1;";
+		try {
+			statement = Database.getConnection().prepareStatement(query);
+			statement.setInt(1, iditem);
+			statement.setString(2, login);
+			ResultSet rs = statement.executeQuery();
+			while (rs.next()) {
+				result = rs.getInt(1);
+			}
+		} catch (SQLException e) {
+			System.out.println("Could not delete item " + e.getMessage());
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+					System.out.println("Could not close statement");
+				}
+			}
+		}
+		return result;
+	}
 }

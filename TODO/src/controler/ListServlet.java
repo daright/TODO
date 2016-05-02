@@ -42,7 +42,12 @@ public class ListServlet extends HttpServlet {
 		List<LineItem> items = (List<LineItem>) session.getAttribute("items");
 		if (items == null) {
 			items = new LinkedList<>(LineItemDAO.getAllLineItems(login));
-			session.setAttribute("items", items);
+		}
+		for (LineItem lineItem : items) {
+			lineItem.setNumOfSubitems(LineItemDAO.getNumOfSubitems(lineItem.getIditem(), login));
+			lineItem.setNumOfCheckedSubitems(LineItemDAO.getNumOfCheckedSubitems(lineItem.getIditem(), login));
+			System.out.println("iditem " + lineItem.getIditem() + " login " + login);
+			System.out.println(LineItemDAO.getNumOfSubitems(lineItem.getIditem(), login) + " / " + LineItemDAO.getNumOfCheckedSubitems(lineItem.getIditem(), login));
 		}
 		if (itemCount > 0 && items.size() == 0) {
 			itemCount = 0;
@@ -58,7 +63,7 @@ public class ListServlet extends HttpServlet {
 		}
 
 		if (action.equals("list")) {
-			session.setAttribute("items", LineItemDAO.getAllLineItems(login));
+			session.setAttribute("items", items);
 			session.setAttribute("action", "get");
 		}
 		if (action.equals("add")) {
