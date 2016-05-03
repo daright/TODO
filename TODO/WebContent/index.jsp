@@ -47,7 +47,7 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-10">
-				<table class="table table">
+				<table class="table">
 					<tr>
 						<th><p class="lead">
 								<c:if test="${items.size() > 0}">Here are your added tasks:</c:if>
@@ -81,7 +81,7 @@
 										</c:if>
 									</form>
 								</div>
-								<c:if test="${item.numOfSubitems > 0}"><p>${item.numOfCheckedSubitems}/${item.numOfSubitems} Completed</p></c:if>
+								<c:if test="${item.numOfSubitems > 0}"><p>${item.numOfCheckedSubitems}/${item.numOfSubitems} Completed subtasks</p></c:if>
 							</td>
 						</tr>
 					</c:forEach>

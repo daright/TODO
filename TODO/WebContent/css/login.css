@@ -19,19 +19,8 @@ th {
 body {
 	background-color: #282828;
 	color: #EEEEEE;
-	text-shadow: 2px 2px 2px #008A52;
 }
 
-/* input[type="text"], textarea {
-	color: #EEEEEE;
-	background-color: #141414;
-}
-
-input[type="text"] {
-	border: solid 3px #454545;
-	border-radius: 4px;
-}
- */
 div.circle {
 	width: 0.9em;
 	height: 0.9em;

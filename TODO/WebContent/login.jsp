@@ -37,10 +37,15 @@
 						<label for="password">Password:</label> <input id="password" type="password" name="password" class="form-control" placeholder="Enter password" required="required" />
 					</div>
 					<div class="form-group">
+						<label for="remember">Remember me: </label> <input type="checkbox" id="remember" name="remember" value="true">
+					</div>
+					<div class="form-group">
 						<button type="submit" value="login" class="btn btn-primary btn-lg">Login</button>
 					</div>
 				</form>
-				<c:if test='${invalid.equals("true") }'><p>Invalid username or password</p></c:if>
+				<c:if test='${invalid.equals("true") }'>
+					<p>Invalid username or password</p>
+				</c:if>
 			</div>
 			<div class="col-md-3"></div>
 		</div>
