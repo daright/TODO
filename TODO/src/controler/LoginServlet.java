@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				request.setAttribute("invalid", "true");
 				request.getRequestDispatcher(path).forward(request, response);
+				return;
 			}
 		}
 		response.sendRedirect(path);
