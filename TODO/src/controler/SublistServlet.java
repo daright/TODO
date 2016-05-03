@@ -26,18 +26,11 @@ public class SublistServlet extends HttpServlet {
 		}
 
 		int idparent = Integer.parseInt((String)session.getAttribute("idparent"));
-/*		@SuppressWarnings("unchecked")
-		List<LineItem> items = (List<LineItem>) session.getAttribute("items");
-		if (items == null) {
-			items = new LinkedList<>(LineItemDAO.getAllLineItems(login));
-			session.setAttribute("items", items);
-		}*/
-		
+
 		@SuppressWarnings("unchecked")
 		List<SublistItem> sublistItems = (List<SublistItem>) session.getAttribute("sublistItems");
 		if (sublistItems == null) {
 			sublistItems = new LinkedList<>(SublistItemDAO.getAllLineItems(idparent, login));
-			session.setAttribute("subitems", sublistItems);
 		}
 
 		String url = "./sublist.jsp";
@@ -49,10 +42,8 @@ public class SublistServlet extends HttpServlet {
 		}
 
 		if (action.equals("list")) {
-			session.setAttribute("subitems", SublistItemDAO.getAllLineItems(idparent, login));
 			session.setAttribute("action", "get");
-		}
-		if (action.equals("add")) {
+		} else if (action.equals("add")) {
 			String item = request.getParameter("item");
 			if (item.equals("")) {
 				response.sendRedirect(url);
@@ -65,14 +56,7 @@ public class SublistServlet extends HttpServlet {
 			sublistItems.add(new SublistItem(subitemCount, idparent, login, item, false));
 			session.setAttribute("action", "add");
 			session.setAttribute("subitems", sublistItems);
-			
-			/*for (LineItem lineitem : items) {
-				if (lineitem.getIditem() == idparent) {
-					lineitem.setNumOfSubitems(LineItemDAO.getNumOfSubitems(idparent, login));
-				}
-			}*/
-		}
-		if (action.equals("update")) {
+		} else if (action.equals("update")) {
 			String iditem = request.getParameter("update");
 			if (iditem.startsWith("update")) {
 				iditem = iditem.substring("update".length());
@@ -80,23 +64,18 @@ public class SublistServlet extends HttpServlet {
 				SublistItem sublistItem = new SublistItem(Integer.parseInt(iditem), idparent, login, item, false);
 				update(sublistItem, sublistItems);
 
-			}
-			if (iditem.startsWith("check")) {
+			} else if (iditem.startsWith("check")) {
 				iditem = iditem.substring("check".length());
 				check(Integer.parseInt(iditem), idparent, login, sublistItems);
-			}
-			if (iditem.startsWith("delete")) {
+			} else if (iditem.startsWith("delete")) {
 				iditem = iditem.substring("update".length());
 				delete(Integer.parseInt(iditem), idparent, login, sublistItems);
-			}
-			if (iditem.startsWith("uncheck")) {
+			} else if (iditem.startsWith("uncheck")) {
 				iditem = iditem.substring("uncheck".length());
 				uncheck(Integer.parseInt(iditem), idparent, login, sublistItems);
 			}
-
-			request.setAttribute("action", "update");
-			session.setAttribute("subitems", sublistItems);
 		}
+		session.setAttribute("subitems", sublistItems);
 		response.sendRedirect(url);
 	}
 

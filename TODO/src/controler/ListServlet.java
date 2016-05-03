@@ -32,9 +32,9 @@ public class ListServlet extends HttpServlet {
 		}
 		int itemCount = 0;
 		if (session.getAttribute("itemCount") != null) {
-			itemCount = (int) session.getAttribute("itemCount");	
+			itemCount = (int) session.getAttribute("itemCount");
 		}
-		
+
 		if (itemCount == 0) {
 			itemCount = UserDAO.getItemCount(login);
 		}
@@ -46,8 +46,6 @@ public class ListServlet extends HttpServlet {
 		for (LineItem lineItem : items) {
 			lineItem.setNumOfSubitems(LineItemDAO.getNumOfSubitems(lineItem.getIditem(), login));
 			lineItem.setNumOfCheckedSubitems(LineItemDAO.getNumOfCheckedSubitems(lineItem.getIditem(), login));
-			System.out.println("iditem " + lineItem.getIditem() + " login " + login);
-			System.out.println(LineItemDAO.getNumOfSubitems(lineItem.getIditem(), login) + " / " + LineItemDAO.getNumOfCheckedSubitems(lineItem.getIditem(), login));
 		}
 		if (itemCount > 0 && items.size() == 0) {
 			itemCount = 0;
@@ -64,9 +62,7 @@ public class ListServlet extends HttpServlet {
 
 		if (action.equals("list")) {
 			session.setAttribute("items", items);
-			session.setAttribute("action", "get");
-		}
-		if (action.equals("add")) {
+		} if (action.equals("add")) {
 			String item = request.getParameter("item");
 			if (item.equals("")) {
 				response.sendRedirect(url);
@@ -77,10 +73,7 @@ public class ListServlet extends HttpServlet {
 			UserDAO.updateItemCount(itemCount, login);
 			items.add(new LineItem(itemCount, item, false, login));
 			session.setAttribute("itemCount", itemCount);
-			session.setAttribute("action", "add");
-			session.setAttribute("items", items);
-		}
-		if (action.equals("update")) {
+		} else if (action.equals("update")) {
 			String iditem = request.getParameter("update");
 			if (iditem.startsWith("update")) {
 				iditem = iditem.substring("update".length());
@@ -88,27 +81,22 @@ public class ListServlet extends HttpServlet {
 				LineItem lineItem = new LineItem(Integer.parseInt(iditem), item, false, login);
 				update(lineItem, items);
 
-			}
-			if (iditem.startsWith("check")) {
+			} else if (iditem.startsWith("check")) {
 				iditem = iditem.substring("check".length());
 				check(Integer.parseInt(iditem), login, items);
-			}
-			if (iditem.startsWith("delete")) {
+			} else if (iditem.startsWith("delete")) {
 				iditem = iditem.substring("update".length());
 				delete(Integer.parseInt(iditem), login, items);
-			}
-			if (iditem.startsWith("uncheck")) {
+			} else if (iditem.startsWith("uncheck")) {
 				iditem = iditem.substring("uncheck".length());
 				uncheck(Integer.parseInt(iditem), login, items);
-			}
-			if (iditem.startsWith("sublist")) {
+			} else if (iditem.startsWith("sublist")) {
 				iditem = iditem.substring("sublist".length());
 				session.setAttribute("idparent", iditem);
 				String item = request.getParameter("item" + iditem);
 				session.setAttribute("parent", item);
 				url = "./sublist";
 			}
-			request.setAttribute("action", "update");
 			session.setAttribute("items", items);
 		}
 		response.sendRedirect(url);
