@@ -3,16 +3,19 @@ package model;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 public class UserDAO {
 	public static void addUser(User user) {
 		PreparedStatement statement = null;
 		try {
-			statement = Database.getConnection().prepareStatement("INSERT INTO users VALUES(?,?, DEFAULT)");
+			statement = Database.getConnection().prepareStatement("INSERT INTO users VALUES(?,?,?,DEFAULT)");
 			String login = user.getLogin();
 			String password = user.getPassword();
 			statement.setString(1, login);
-			statement.setString(2, password);
+			byte[] salt = Passwords.getNextSalt();
+			statement.setBytes(2, Passwords.hash(password.toCharArray(), salt));
+			statement.setBytes(3, salt);
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Error opening statement UserDAO.addUser: " + e.getMessage() + " " + e.getSQLState());
@@ -71,13 +74,14 @@ public class UserDAO {
 		String password = user.getPassword();
 		PreparedStatement statement = null;
 		try {
-			statement = Database.getConnection().prepareStatement("SELECT password FROM users WHERE login = ?");
+			statement = Database.getConnection().prepareStatement("SELECT hash, salt FROM users WHERE login = ?");
 			statement.setString(1, login);
 			ResultSet rs = statement.executeQuery();
 			if (rs.next()) {
-				String passToCheck = rs.getString(1);
-				if (password.equals(passToCheck)) {
-					result = true;	
+				byte[] hash = rs.getBytes(1);
+				byte[] salt = rs.getBytes(2);
+				if (Arrays.equals(hash, Passwords.hash(password.toCharArray(), salt))) {
+					result = true;
 				}
 			}
 		} catch (SQLException e) {
