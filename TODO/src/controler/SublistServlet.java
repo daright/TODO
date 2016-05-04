@@ -23,6 +23,7 @@ public class SublistServlet extends HttpServlet {
 		String login = (String) session.getAttribute("login");
 		if (login == null) {
 			response.sendRedirect("./index.jsp");
+			return;
 		}
 
 		int idparent = Integer.parseInt((String)session.getAttribute("idparent"));

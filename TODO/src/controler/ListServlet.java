@@ -29,6 +29,7 @@ public class ListServlet extends HttpServlet {
 		String login = (String) session.getAttribute("login");
 		if (login == null) {
 			response.sendRedirect("./login.jsp");
+			return;
 		}
 		int itemCount = 0;
 		if (session.getAttribute("itemCount") != null) {
