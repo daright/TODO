@@ -8,6 +8,8 @@
 <meta name="keywords" content="list,todo">
 <meta name="author" content="Piotr Kasperek">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
 <title>TODO list</title>

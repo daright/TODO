@@ -17,18 +17,17 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
+		System.out.println("doPost");
 		String path = "./login.jsp";
 		String action = request.getParameter("action");
 		if (action.equals("login")) {
 			String login = request.getParameter("login");
-			String password = request.getParameter("password");
 			boolean remember = "true".equals(request.getParameter("remember"));
-			if (UserDAO.checkLogin(new User(login, password))) {
+			if (UserDAO.checkLogin(new User(login, request.getParameter("password")))) {
 				path = "./list";
 				request.getSession().setAttribute("login", login);
 				if (remember) {
-					Cookie cookie = new Cookie("logii", login);
+					Cookie cookie = new Cookie("login", login);
 					cookie.setMaxAge(2592000);
 					cookie.setPath("/");
 					response.addCookie(cookie);

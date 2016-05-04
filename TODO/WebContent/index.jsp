@@ -8,6 +8,8 @@
 <meta name="keywords" content="list,todo">
 <meta name="author" content="Piotr Kasperek">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 <title>TODO list</title>
@@ -53,9 +55,14 @@
 								<c:if test="${items.size() > 0}">Here are your added tasks:</c:if>
 							</p></th>
 					</tr>
+					<c:set var="counter" value="0"></c:set>
 					<c:forEach var="item" items="${items}">
+						<c:set var="counter" value="${counter+1 }"></c:set>
 						<tr>
-							<td>
+							<td class="td">
+								<div class="counter">
+									<p>${counter}.</p>
+								</div>
 								<div class="form">
 									<form action="list" method="post" class="form" role="form">
 										<c:if test="${item.checked}">
@@ -80,8 +87,9 @@
 											</div>
 										</c:if>
 									</form>
-								</div>
-								<c:if test="${item.numOfSubitems > 0}"><p>${item.numOfCheckedSubitems}/${item.numOfSubitems} Completed subtasks</p></c:if>
+								</div> <c:if test="${item.numOfSubitems > 0}">
+									<p>${item.numOfCheckedSubitems}/${item.numOfSubitems} Completed subtasks</p>
+								</c:if>
 							</td>
 						</tr>
 					</c:forEach>

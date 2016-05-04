@@ -17,6 +17,8 @@ public class LogoutServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Cookie[] cookies = request.getCookies();
 		for (Cookie cookie : cookies) {
+			cookie.setValue(null);
+			cookie.setPath("/");
 			cookie.setMaxAge(0);
 			response.addCookie(cookie);
 		}
