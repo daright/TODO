@@ -70,7 +70,7 @@
 											<div class="input-group">
 												<span class="input-group-addon" id="basic-addon1">${counter}</span>  <input id="disabled" type="text" name="item${item.iditem}"
 													class="form-control" value="${item.item}" disabled="disabled" />
-												<div class="input-group-btn buttons">
+												<div class="input-group-btn buttons-two">
 													<button type="submit" name="update" value="delete${item.iditem}" class="btn btn-danger glyphicon glyphicon-trash"></button>
 													<button type="submit" name="update" value="uncheck${item.iditem}" class="btn btn-primary glyphicon glyphicon-ok uncheck"></button>
 												</div>
@@ -82,7 +82,7 @@
 												<span class="input-group-addon" id="basic-addon1">${counter}</span>  
 												<input id="enabled" type="text" name="item${item.iditem}" class="form-control"
 													value="${item.item}" />
-												<div class="input-group-btn buttons">
+												<div class="input-group-btn buttons-three">
 													<button type="submit" name="update" value="update${item.iditem}" class="btn btn-primary glyphicon glyphicon-pencil"></button>
 													<button type="submit" name="update" value="sublist${item.iditem}" class="btn btn-info glyphicon glyphicon-plus"></button>
 													<button type="submit" name="update" value="check${item.iditem}" class="btn btn-success glyphicon glyphicon-ok check"></button>

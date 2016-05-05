@@ -35,7 +35,7 @@ span.input-group-addon {
 
 .td {
 	position: absolute;
-	right: 4%;
+	right: 3%;
 }
 
 .btn {
@@ -46,10 +46,22 @@ th {
 	text-align: center;
 }
 
-.buttons {
+.buttons-three {
+	width: 102px;
 	position: absolute;
-	left: 100%;
+	right: -5%;
 	bottom: -29px;
+}
+.buttons-two {
+	width: 102px;
+	position: absolute;
+	right: calc(-5% - 40px);
+	bottom: -29px;
+}
+
+.completed{
+	position: absolute;
+	left: 46%;
 }
 
 .glyphicon-ok {
@@ -91,10 +103,6 @@ div.form {
 	height: 32px;
 }
 
-.completed{
-	position: absolute;
-	left: 49%;
-}
 
 .logout {
 	position: absolute;
