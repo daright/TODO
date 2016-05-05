@@ -18,9 +18,20 @@ h1 {
 	font-family: 'Lato', sans-serif;	
 }
 
-label {
-	font-weight: 400;
-	font-size: 1.2em;
+/* FORM  */
+span.input-group-addon {
+	background-color: #555;
+	color: #eee;
+	border-color: #666;
+}
+
+.form-div {
+	position: relative;
+}
+
+.td {
+	position: absolute;
+	right: 6%;
 }
 
 .btn {
@@ -31,15 +42,18 @@ th {
 	text-align: center;
 }
 
+.buttons {
+	position: absolute;
+	left: 100%;
+	bottom: -29px;
+}
 
-glyphicon-ok {
+.glyphicon-ok {
 	border-radius: 0 4px 4px 0;
-	position: relative;
 }
 
 .glyphicon-pencil, .glyphicon-trash, .glyphicon-plus {
 	border-radius: 0px;
-	position: relative;
 }
 
 input[type="text"][disabled], textarea {
@@ -64,10 +78,8 @@ input[type="text"] {
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th,
 	.table>thead>tr>td, .table>thead>tr>th {
-	padding-top: 30px;
-	padding-bottom: 4px line-height: 1.42857143;
-	vertical-align: top;
 	border-top: 1px solid #454545;
+	padding: 25px;
 }
 
 div.form {
@@ -75,10 +87,6 @@ div.form {
 	height: 32px;
 }
 
-div.input-group {
-	position: absolute;
-	z-index: 20px;
-}
 
 p {
 	text-align: center;

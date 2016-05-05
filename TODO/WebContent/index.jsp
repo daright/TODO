@@ -63,35 +63,35 @@
 						<c:set var="counter" value="${counter+1 }"></c:set>
 						<tr>
 							<td class="td">
-								<div class="counter">
-									<p>${counter}.</p>
-								</div>
-								<div class="form">
+								<div class="form-div">
 									<form action="list" method="post" class="form" role="form">
 										<c:if test="${item.checked}">
+										<input type="hidden" name="action" value="update" />
 											<div class="input-group">
-												<input type="hidden" name="action" value="update" /> <input type="text" name="item${item.iditem}" class="form-control" value="${item.item}" disabled="disabled" /> <span
-													class="input-group-btn">
+												<span class="input-group-addon" id="basic-addon1">${counter}</span>  <input id="disabled" type="text" name="item${item.iditem}"
+													class="form-control" value="${item.item}" disabled="disabled" />
+												<div class="input-group-btn buttons">
 													<button type="submit" name="update" value="delete${item.iditem}" class="btn btn-danger glyphicon glyphicon-trash"></button>
-												</span> <span class="input-group-btn">
 													<button type="submit" name="update" value="uncheck${item.iditem}" class="btn btn-primary glyphicon glyphicon-ok uncheck"></button>
-												</span>
+												</div>
 											</div>
 										</c:if>
 										<c:if test="${!item.checked}">
+										<input type="hidden" name="action" value="update" />
 											<div class="input-group">
-												<input type="hidden" name="action" value="update" /> <input type="text" name="item${item.iditem}" class="form-control" value="${item.item}" /> <span class="input-group-btn">
+												<span class="input-group-addon" id="basic-addon1">${counter}</span>  
+												<input id="enabled" type="text" name="item${item.iditem}" class="form-control"
+													value="${item.item}" />
+												<div class="input-group-btn buttons">
 													<button type="submit" name="update" value="update${item.iditem}" class="btn btn-primary glyphicon glyphicon-pencil"></button>
-												</span> <span class="input-group-btn">
 													<button type="submit" name="update" value="sublist${item.iditem}" class="btn btn-info glyphicon glyphicon-plus"></button>
-												</span> <span class="input-group-btn">
 													<button type="submit" name="update" value="check${item.iditem}" class="btn btn-success glyphicon glyphicon-ok check"></button>
-												</span>
+												</div>
 											</div>
 										</c:if>
 									</form>
 								</div> <c:if test="${item.numOfSubitems > 0}">
-									<p>${item.numOfCheckedSubitems}/${item.numOfSubitems}Completed subtasks</p>
+									<p>${item.numOfCheckedSubitems}/${item.numOfSubitems}Completedsubtasks</p>
 								</c:if>
 							</td>
 						</tr>
