@@ -11,7 +11,7 @@ CREATE TABLE users(
 
 CREATE TABLE list(
 	iditem INT(5) NOT NULL,
-    item VARCHAR(255) NOT NULL,
+    item TEXT NOT NULL,
     checked TINYINT(4) DEFAULT 0,
     login VARCHAR(20), 
 	PRIMARY KEY (iditem, login),
@@ -22,7 +22,7 @@ CREATE TABLE sublist(
 	iditem INT(3) NOT NULL,
     idparent INT (5) NOT NULL,
     login VARCHAR(20) NOT NULL,
-    item VARCHAR(255) NOT NULL,
+    item TEXT NOT NULL,
     checked TINYINT(4) DEFAULT 0,
     PRIMARY KEY (iditem, idparent, login),
     FOREIGN KEY (idparent, login) REFERENCES list(iditem, login)

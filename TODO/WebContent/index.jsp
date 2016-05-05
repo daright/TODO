@@ -41,7 +41,7 @@
 					<form action="list" method="post" class="form" role="form">
 						<div class="input-group">
 							<input type="hidden" name="action" value="add" /> <input type="text" name="item" class="form-control" placeholder="Add something you wish to do..." autofocus /> <span class="input-group-btn">
-								<button type="submit" value="Add" class="btn btn-success">Add</button>
+								<button type="submit" value="Add" class="btn btn-success add">Add</button>
 							</span>
 						</div>
 					</form>
@@ -66,10 +66,10 @@
 								<div class="form-div">
 									<form action="list" method="post" class="form" role="form">
 										<c:if test="${item.checked}">
-										<input type="hidden" name="action" value="update" />
+											<input type="hidden" name="action" value="update" />
 											<div class="input-group">
-												<span class="input-group-addon" id="basic-addon1">${counter}</span>  <input id="disabled" type="text" name="item${item.iditem}"
-													class="form-control" value="${item.item}" disabled="disabled" />
+												<span class="input-group-addon">${counter}</span>
+												<textarea rows="1" name="item${item.iditem}" class="form-control textarea-width" disabled="disabled">${item.item}</textarea>
 												<div class="input-group-btn buttons-two">
 													<button type="submit" name="update" value="delete${item.iditem}" class="btn btn-danger glyphicon glyphicon-trash"></button>
 													<button type="submit" name="update" value="uncheck${item.iditem}" class="btn btn-primary glyphicon glyphicon-ok uncheck"></button>
@@ -77,13 +77,12 @@
 											</div>
 										</c:if>
 										<c:if test="${!item.checked}">
-										<input type="hidden" name="action" value="update" />
+											<input type="hidden" name="action" value="update" />
 											<div class="input-group">
-												<span class="input-group-addon" id="basic-addon1">${counter}</span>  
-												<input id="enabled" type="text" name="item${item.iditem}" class="form-control"
-													value="${item.item}" />
+												<span class="input-group-addon">${counter}</span>
+												<textarea rows="1" name="item${item.iditem}" class="form-control">${item.item}</textarea>
 												<div class="input-group-btn buttons-three">
-													<button type="submit" name="update" value="update${item.iditem}" class="btn btn-primary glyphicon glyphicon-pencil"></button>
+													<button id="update" type="submit" name="update" value="update${item.iditem}" class="btn btn-primary glyphicon glyphicon-pencil"></button>
 													<button type="submit" name="update" value="sublist${item.iditem}" class="btn btn-info glyphicon glyphicon-plus"></button>
 													<button type="submit" name="update" value="check${item.iditem}" class="btn btn-success glyphicon glyphicon-ok check"></button>
 												</div>
