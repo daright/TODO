@@ -15,6 +15,9 @@
 <title>TODO list</title>
 </head>
 <body>
+	<c:if test="${empty login }">
+		<c:redirect url="./login"></c:redirect>
+	</c:if>
 	<div class="back">
 		<a href="./list" class="btn btn-default glyphicon glyphicon-arrow-left"><p>Back</p></a>
 	</div>

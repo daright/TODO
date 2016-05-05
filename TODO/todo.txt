@@ -1,1 +1,0 @@
-if item is removed remove its subitems

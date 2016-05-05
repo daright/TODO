@@ -15,6 +15,9 @@
 <title>TODO list</title>
 </head>
 <body>
+	<c:if test="${empty login }">
+		<c:redirect url="./login"></c:redirect>
+	</c:if>
 	<div class="logout">
 		<a href="./logout" class="btn btn-default glyphicon glyphicon-log-out"><p>Logout</p></a>
 	</div>
@@ -88,7 +91,7 @@
 										</c:if>
 									</form>
 								</div> <c:if test="${item.numOfSubitems > 0}">
-									<p>${item.numOfCheckedSubitems}/${item.numOfSubitems} Completed subtasks</p>
+									<p>${item.numOfCheckedSubitems}/${item.numOfSubitems}Completed subtasks</p>
 								</c:if>
 							</td>
 						</tr>
