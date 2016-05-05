@@ -25,6 +25,7 @@ public class ListServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		String login = (String) session.getAttribute("login");
 		if (login == null) {

@@ -17,6 +17,7 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String path = "./login.jsp";
 		String action = request.getParameter("action");
 		if (action.equals("login")) {
@@ -42,6 +43,7 @@ public class LoginServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		Cookie[] cookies = request.getCookies();
 		for (Cookie cookie : cookies) {
 			if (UserDAO.checkIfUserExist(cookie.getValue())) {
