@@ -91,7 +91,7 @@
 										</c:if>
 									</form>
 								</div> <c:if test="${item.numOfSubitems > 0}">
-									<p>${item.numOfCheckedSubitems}/${item.numOfSubitems}Completedsubtasks</p>
+									<p class="completed">${item.numOfCheckedSubitems}/${item.numOfSubitems} Completed subtasks</p>
 								</c:if>
 							</td>
 						</tr>

@@ -18,6 +18,10 @@ h1 {
 	font-family: 'Lato', sans-serif;	
 }
 
+p {
+	text-align: center;
+}
+
 /* FORM  */
 span.input-group-addon {
 	background-color: #555;
@@ -31,7 +35,7 @@ span.input-group-addon {
 
 .td {
 	position: absolute;
-	right: 6%;
+	right: 4%;
 }
 
 .btn {
@@ -87,9 +91,9 @@ div.form {
 	height: 32px;
 }
 
-
-p {
-	text-align: center;
+.completed{
+	position: absolute;
+	left: 49%;
 }
 
 .logout {
