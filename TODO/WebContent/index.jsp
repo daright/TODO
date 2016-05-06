@@ -69,7 +69,7 @@
 											<input type="hidden" name="action" value="update" />
 											<div class="input-group">
 												<span class="input-group-addon">${counter}</span>
-												<textarea rows="1" name="item${item.iditem}" class="form-control textarea-width" disabled="disabled">${item.item}</textarea>
+												<textarea rows="1" name="item${item.iditem}" class="form-control textarea-width-two" disabled="disabled">${item.item}</textarea>
 												<div class="input-group-btn buttons-two">
 													<button type="submit" name="update" value="delete${item.iditem}" class="btn btn-danger glyphicon glyphicon-trash"></button>
 													<button type="submit" name="update" value="uncheck${item.iditem}" class="btn btn-primary glyphicon glyphicon-ok uncheck"></button>
@@ -80,7 +80,7 @@
 											<input type="hidden" name="action" value="update" />
 											<div class="input-group">
 												<span class="input-group-addon">${counter}</span>
-												<textarea rows="1" name="item${item.iditem}" class="form-control">${item.item}</textarea>
+												<textarea rows="1" name="item${item.iditem}" class="form-control textarea-width-three">${item.item}</textarea>
 												<div class="input-group-btn buttons-three">
 													<button id="update" type="submit" name="update" value="update${item.iditem}" class="btn btn-primary glyphicon glyphicon-pencil"></button>
 													<button type="submit" name="update" value="sublist${item.iditem}" class="btn btn-info glyphicon glyphicon-plus"></button>

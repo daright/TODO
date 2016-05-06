@@ -78,8 +78,12 @@ th {
 	border-radius: 0px;
 }
 
-textarea.form-control:enabled, textarea.form-control:disabled {
+textarea.form-control.textarea-width-three:enabled, textarea.form-control.textarea-width-three:disabled {
 	width: calc(100% - 75px);
+}
+
+textarea.form-control.textarea-width-two:enabled, textarea.form-control.textarea-width-two:disabled {
+	width: calc(100% - 35px);
 }
 
 input[type="text"][disabled], textarea[disabled].form-control {
