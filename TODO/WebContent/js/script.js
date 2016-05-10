@@ -96,5 +96,15 @@ $(document).ready(function() {
 	        $(':focus').next().children().first().click();
 	   }
 	});
-
+	function animation() {
+		$(".circle").animate({
+			'background-color': '#757575',
+			'width' : '1000px'
+		}, function(){
+			$(this).animate({
+				backgroundColor : '#656565'
+			}, animation())
+		});
+	}
+	animation();
 });

@@ -45,13 +45,15 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		Cookie[] cookies = request.getCookies();
-		for (Cookie cookie : cookies) {
-			if (UserDAO.checkIfUserExist(cookie.getValue())) {
-				request.getSession().setAttribute("login", cookie.getValue());
-				response.sendRedirect("./list");
-				return;
-			}
-		}
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (UserDAO.checkIfUserExist(cookie.getValue())) {
+					request.getSession().setAttribute("login", cookie.getValue());
+					response.sendRedirect("./list");
+					return;
+				}
+			}	
+		}	
 		response.sendRedirect("./login.jsp");
 	}
 }

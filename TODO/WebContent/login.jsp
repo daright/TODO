@@ -33,14 +33,17 @@
 				<form action="login" method="post" class="form-horizontal" role="form">
 					<input type="hidden" name="action" value="login" />
 					<div class="form-group">
-						<label for="login">Login:</label> <input id="login" type="text" name="login" class="form-control" placeholder="Enter login" autofocus="autofocus" required="required" />
+						<label for="login">Login</label> <input id="login" type="text" name="login" class="form-control" placeholder="Enter login" autofocus="autofocus" required="required" />
 					</div>
 					<div class="form-group">
-						<label for="password">Password:</label> <input id="password" type="password" name="password" class="form-control" placeholder="Enter password" required="required" />
+						<label for="password">Password</label> <input id="password" type="password" name="password" class="form-control" placeholder="Enter password" required="required" />
 					</div>
-					<div class="form-group">
-						<label for="remember">Remember me: </label> <input type="checkbox" id="remember" name="remember" value="true">
+
+					<div class="form-group checkbox">
+						<label for="remember"> <input type="checkbox" id="remember" name="remember" value="true"> Remember me
+						</label>
 					</div>
+
 					<div class="form-group">
 						<button type="submit" value="login" class="btn btn-primary btn-lg">Login</button>
 					</div>
@@ -69,7 +72,9 @@
 			<div class="col-md-3"></div>
 		</div>
 	</div>
-	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/jquery-1.12.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.color-2.1.2.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
 </body>
 </html>

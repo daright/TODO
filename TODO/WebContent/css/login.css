@@ -62,3 +62,7 @@ div.goback, div.createacc {
 a.btn {
 	margin: auto;
 }
+
+div.form-group.checkbox {
+	margin-bottom: 20px;
+}
