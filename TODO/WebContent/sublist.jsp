@@ -15,11 +15,13 @@
 <title>TODO list</title>
 </head>
 <body>
-	<div class="back">
-		<a href="./list" class="btn btn-default glyphicon glyphicon-arrow-left"><p>Back</p></a>
+	<div class="back btn btn-default">
+		<a href="./list">Back</a><br />
+		<p class="glyphicon glyphicon-arrow-left"></p>
 	</div>
-	<div class="logout">
-		<a href="./logout" class="btn btn-default glyphicon glyphicon-log-out"><p>Logout</p></a>
+	<div class="logout btn btn-default">
+		<a href="./logout">Logout</a><br />
+		<p class="glyphicon glyphicon-log-out"></p>
 	</div>
 	<header>
 		<div class="container">

@@ -4,12 +4,14 @@ $(document).ready(function() {
 			'top' : '-6px'
 		});
 		$(this).css({
+			'left' : '-10px',
 			'height' : 'auto'
 		});
 		$(this).html($("<p>Check</p>"));
 	}, function() {
 		$(this).parent().children().css({
 			'top' : '1px',
+			'left' : '0px',
 			'height' : '50px'
 		});
 		$(this).html($(""));
@@ -20,12 +22,14 @@ $(document).ready(function() {
 			'top' : '-6px'
 		});
 		$(this).css({
+			'left' : '-16px',
 			'height' : 'auto'
 		});
 		$(this).html($("<p>Uncheck</p>"));
 	}, function() {
 		$(this).parent().children().css({
 			'top' : '1px',
+			'left' : '0px',
 			'height' : '50px'
 		});
 		$(this).html($(""));
@@ -33,15 +37,18 @@ $(document).ready(function() {
 
 	$(".glyphicon-pencil").hover(function() {
 		$(this).parent().children().css({
+			'left' : '-5px',
 			'top' : '-6px'
 		});
 		$(this).css({
+			'left' : '-5px',
 			'height' : 'auto'
 		});
 		$(this).html($("<p>Edit</p>"));
 	}, function() {
 		$(this).parent().children().css({
 			'top' : '1px',
+			'left' : '0px',
 			'height' : '50px'
 		});
 		$(this).html($(""));
@@ -49,15 +56,18 @@ $(document).ready(function() {
 
 	$(".glyphicon-trash").hover(function() {
 		$(this).parent().children().css({
+			'left' : '-15px',
 			'top' : '-6px'
 		});
 		$(this).css({
+			'left' : '-15px',
 			'height' : 'auto'
 		});
 		$(this).html($("<p>Remove</p>"));
 	}, function() {
 		$(this).parent().children().css({
 			'top' : '1px',
+			'left' : '0px',
 			'height' : '50px'
 		});
 		$(this).html($(""));
@@ -65,15 +75,18 @@ $(document).ready(function() {
 
 	$(".glyphicon-plus").hover(function() {
 		$(this).parent().children().css({
+			'left' : '-4px',
 			'top' : '-6px'
 		});
 		$(this).css({
+			'left' : '-4px',
 			'height' : 'auto'
 		});
 		$(this).append($("<p>Add</p>"));
 	}, function() {
 		$(this).parent().children().css({
 			'top' : '1px',
+			'left' : '0px',
 			'height' : '50px'
 		});
 		$(this).html($(""));
@@ -96,15 +109,4 @@ $(document).ready(function() {
 	        $(':focus').next().children().first().click();
 	   }
 	});
-	function animation() {
-		$(".circle").animate({
-			'background-color': '#757575',
-			'width' : '1000px'
-		}, function(){
-			$(this).animate({
-				backgroundColor : '#656565'
-			}, animation())
-		});
-	}
-	animation();
 });

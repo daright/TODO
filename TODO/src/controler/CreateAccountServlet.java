@@ -45,7 +45,7 @@ public class CreateAccountServlet extends HttpServlet {
 					request.getRequestDispatcher(path).forward(request, response);
 					return;
 				} else {
-					path = "./index.jsp";
+					path = "./list";
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

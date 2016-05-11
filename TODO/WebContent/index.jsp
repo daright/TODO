@@ -18,8 +18,9 @@
 	<c:if test="${empty login }">
 		<c:redirect url="./login"></c:redirect>
 	</c:if>
-	<div class="logout">
-		<a href="./logout" class="btn btn-default glyphicon glyphicon-log-out"><p>Logout</p></a>
+	<div class="logout btn btn-default">
+		<a href="./logout">Logout</a><br/>
+		<p class="glyphicon glyphicon-log-out"></p>
 	</div>
 	<header>
 		<div class="container">
