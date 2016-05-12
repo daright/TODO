@@ -116,12 +116,14 @@ div.form {
 	position: absolute;
 	top: 1%;
 	right: 1%;
+	height: 60px;
 }
 
 .back {
 	position: absolute;
 	top: 1%;
 	left: 1%;
+	height: 60px;
 }
 
 .td {

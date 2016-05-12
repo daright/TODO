@@ -18,9 +18,9 @@
 	<c:if test="${empty login }">
 		<c:redirect url="./login"></c:redirect>
 	</c:if>
-	<div class="logout btn btn-default">
-		<a href="./logout">Logout</a><br/>
+	<div class="logout btn btn-default" onclick="window.location='./logout';">
 		<p class="glyphicon glyphicon-log-out"></p>
+		<p>Logout</p>
 	</div>
 	<header>
 		<div class="container">
@@ -91,7 +91,7 @@
 										</c:if>
 									</form>
 								</div> <c:if test="${item.numOfSubitems > 0}">
-									<p class="completed">${item.numOfCheckedSubitems}/${item.numOfSubitems} Completed subtasks</p>
+									<p class="completed">${item.numOfCheckedSubitems}/${item.numOfSubitems}Completed subtasks</p>
 								</c:if>
 							</td>
 						</tr>
