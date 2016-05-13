@@ -55,16 +55,18 @@
 			<div class="col-md-3"></div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 circles">
-				<div class="circle"></div>
-				<div class="circle middle"></div>
-				<div class="circle"></div>
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-md-3"></div>
 			<div class="col-md-6">
 				<h3>If you don't have an account yet, you can create one here...</h3>
+				<div class="row">
+					<div class="circles">
+						<div class="circle"></div>
+						<div class="circle middle"></div>
+						<div class="circle"></div>
+						<div class="circle left"></div>
+						<div class="circle right"></div>
+					</div>
+				</div>
 				<div class="createacc">
 					<a href="./createaccount.jsp" class="btn btn-info btn-lg">Create Account</a>
 				</div>

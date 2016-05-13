@@ -53,13 +53,6 @@
 			<div class="col-md-3"></div>
 		</div>
 		<div class="row">
-			<div class="col-md-12 circles">
-				<div class="circle"></div>
-				<div class="circle middle"></div>
-				<div class="circle"></div>
-			</div>
-		</div>
-		<div class="row">
 			<div class="col-md-12">
 				<div class="goback">
 					<a href="./login.jsp" class="btn btn-info">Go back to login page</a>

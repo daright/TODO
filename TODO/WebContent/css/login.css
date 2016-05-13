@@ -47,9 +47,22 @@ div.circle.middle {
 	height: 1.2em;
 }
 
-.circles {
-	margin-top: 25px;
-	margin-bottom: 25px;
+div.circle.left {
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+}
+
+div.circle.right {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+}
+
+div.circles {
+	position: relative;
+	width: 10%;
+	margin: auto;
 }
 
 div.goback, div.createacc {
