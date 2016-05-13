@@ -41,9 +41,18 @@
 				<div class="form">
 					<form action="list" method="post" class="form" role="form">
 						<div class="input-group">
-							<input type="hidden" name="action" value="add" /> <input type="text" name="item" class="form-control" placeholder="Add something you wish to do..." autofocus /> <span class="input-group-btn">
+							<input type="hidden" name="action" value="add" /> 
+							<textarea rows=1 name="item" class="form-control" placeholder="Add something you wish to do..." autofocus ></textarea> 
+							<div class="addition">
+								<div class="input-group-addon date">Date</div>
+							</div>
+							<span class="addition">
+								<input type="date" name="date" class="form-control">
+							</span>
+							<span class="addition">
 								<button type="submit" value="Add" class="btn btn-success add">Add</button>
 							</span>
+															
 						</div>
 					</form>
 				</div>
@@ -91,7 +100,7 @@
 										</c:if>
 									</form>
 								</div> <c:if test="${item.numOfSubitems > 0}">
-									<p class="completed">${item.numOfCheckedSubitems}/${item.numOfSubitems}Completed subtasks</p>
+									<p class="completed">${item.numOfCheckedSubitems}/${item.numOfSubitems}Completedsubtasks</p>
 								</c:if>
 							</td>
 						</tr>

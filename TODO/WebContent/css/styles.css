@@ -52,22 +52,52 @@ th {
 }
 
 .buttons-three {
-	width: 102px;
+	width: 120px;
 	position: absolute;
-	right: calc(0% - 28px);
+	right: calc(0% - 35px);
 	top: -1px;
 }
 
 .buttons-two {
-	width: 102px;
+	width: 120px;
 	position: absolute;
-	right: calc(0% - 68px);
+	right: calc(0% - 73px);
 	top: -1px;
 }
 
 .completed {
 	position: absolute;
 	left: 45%;
+}
+
+.addition {
+	display: table-cell;
+	width: 1%;
+}
+
+input[type="date"] {
+	height: 50px;
+}
+
+div.date {
+	position: relative;
+	top: -18px;
+	height: 50px;
+}
+
+button.add {
+	position: relative;
+	height: 50px;
+	top: -7px;
+	border-radius: 0px 8px 8px 0;
+}
+
+button.check, button.uncheck {
+	border-radius: 0px 8px 8px 0;
+}
+
+span.input-group-addon {
+		border-radius: 8px 0 0 8px;
 }
 
 .glyphicon-ok {

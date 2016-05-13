@@ -104,9 +104,16 @@ $(document).ready(function() {
 	});
 
 	$('textarea').keydown(function(e) {
-	     if(e.keyCode == 13) {
-	       e.preventDefault(); // Makes no difference
-	        $(':focus').next().children().first().click();
-	   }
+		if (e.keyCode == 13) {
+			e.preventDefault();
+			$(':focus').next().children().first().click();
+		}
+	});
+
+	$('textarea[name="item"]').keydown(function(e) {
+		if (e.keyCode == 13) {
+			e.preventDefault();
+			$(':focus').next().next().next().children().first().click();
+		}
 	});
 });
