@@ -35,10 +35,10 @@ $(document).ready(function() {
 							backgroundColor : '#656565'
 						}, delay);
 					});
-					setTimeout(animation, 1500, 500, '#31B0D5');
+					setTimeout(animation, 1500, delay, '#31B0D5');
 				});
 			});
 		});
 	}
-	setTimeout(animation, 1500, 500, '#31B0D5');
+	setTimeout(animation, 1500, 400, '#31B0D5');
 });

@@ -13,7 +13,8 @@ CREATE TABLE list(
 	iditem INT(5) NOT NULL,
     item TEXT NOT NULL,
     checked TINYINT(4) DEFAULT 0,
-    login VARCHAR(20), 
+    login VARCHAR(20),
+    dateAdded DATE,
 	PRIMARY KEY (iditem, login),
 	FOREIGN KEY (login) REFERENCES users(login)
 );
@@ -27,3 +28,6 @@ CREATE TABLE sublist(
     PRIMARY KEY (iditem, idparent, login),
     FOREIGN KEY (idparent, login) REFERENCES list(iditem, login)
 );
+
+INSERT INTO list VALUES (1, 'aaa', 0, 'asd', '2016-01-01');
+SELECT * from list;

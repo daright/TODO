@@ -70,10 +70,14 @@ public class ListServlet extends HttpServlet {
 				response.sendRedirect(url);
 				return;
 			}
+			String date = request.getParameter("date");
+			if (date.equals("")) {
+				date = "1970-01-01";
+			}
 			itemCount++;
-			LineItemDAO.addLineItem(itemCount, item, login);
+			LineItemDAO.addLineItem(itemCount, item, login, date);
 			UserDAO.updateItemCount(itemCount, login);
-			items.add(new LineItem(itemCount, item, false, login));
+			items.add(new LineItem(itemCount, item, false, login, date));
 			session.setAttribute("itemCount", itemCount);
 		} else if (action.equals("update")) {
 			String iditem = request.getParameter("update");

@@ -42,8 +42,10 @@
 				<div class="form">
 					<form action="sublist" method="post" class="form" role="form">
 						<div class="input-group">
-							<input type="hidden" name="action" value="add" /> <input type="text" name="item" class="form-control" placeholder="Add subtasks to this list..." autofocus /> <span class="input-group-btn">
-								<button type="submit" value="Add" class="btn btn-success add">Add</button>
+							<input type="hidden" name="action" value="add" /> 
+							<textarea rows=1 name="item" class="form-control" placeholder="Add subtasks to this list..." autofocus></textarea> 
+							<span class="input-group-btn">
+								<button type="submit" value="Add" class="btn btn-success addsub">Add</button>
 							</span>
 						</div>
 					</form>

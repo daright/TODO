@@ -7,14 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LineItemDAO {
-	public static void addLineItem(int iditem, String item, String login) {
+	public static void addLineItem(int iditem, String item, String login, String date) {
 		PreparedStatement prepStatement = null;
 		try {
-			String preparedSQL = "INSERT INTO list VALUES(?, ?, DEFAULT, ?)";
+			String preparedSQL = "INSERT INTO list VALUES(?, ?, DEFAULT, ?, ?)";
 			prepStatement = Database.getConnection().prepareStatement(preparedSQL);
 			prepStatement.setInt(1, iditem);
 			prepStatement.setString(2, item);
 			prepStatement.setString(3, login);
+			prepStatement.setString(4, date);
 			prepStatement.execute();
 
 		} catch (SQLException e) {
@@ -44,7 +45,7 @@ public class LineItemDAO {
 				if (rs.getInt(3) == 1) {
 					checked = true;
 				}
-				LineItem lineItem = new LineItem(rs.getInt(1), rs.getString(2), checked, login);
+				LineItem lineItem = new LineItem(rs.getInt(1), rs.getString(2), checked, login, rs.getString(5));
 				items.add(lineItem);
 			}
 		} catch (SQLException e) {

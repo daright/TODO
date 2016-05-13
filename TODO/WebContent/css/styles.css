@@ -43,10 +43,6 @@ span.input-group-addon {
 	height: 50px;
 }
 
-.add {
-	height: auto;
-}
-
 th {
 	text-align: center;
 }
@@ -66,8 +62,7 @@ th {
 }
 
 .completed {
-	position: absolute;
-	left: 45%;
+	margin: auto;
 }
 
 .addition {
@@ -89,6 +84,11 @@ button.add {
 	position: relative;
 	height: 50px;
 	top: -7px;
+	border-radius: 0px 8px 8px 0;
+}
+
+button.addsub {
+	height: 50px;
 	border-radius: 0px 8px 8px 0;
 }
 

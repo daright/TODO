@@ -44,7 +44,7 @@
 							<input type="hidden" name="action" value="add" /> 
 							<textarea rows=1 name="item" class="form-control" placeholder="Add something you wish to do..." autofocus ></textarea> 
 							<div class="addition">
-								<div class="input-group-addon date">Date</div>
+								<div class="input-group-addon date">Date:</div>
 							</div>
 							<span class="addition">
 								<input type="date" name="date" class="form-control">
@@ -52,7 +52,6 @@
 							<span class="addition">
 								<button type="submit" value="Add" class="btn btn-success add">Add</button>
 							</span>
-															
 						</div>
 					</form>
 				</div>
@@ -66,7 +65,8 @@
 					<tr>
 						<th><p class="lead">
 								<c:if test="${items.size() > 0}">Here are your added tasks:</c:if>
-							</p></th>
+							</p>
+						</th>
 					</tr>
 					<c:set var="counter" value="0"></c:set>
 					<c:forEach var="item" items="${items}">
@@ -99,9 +99,19 @@
 											</div>
 										</c:if>
 									</form>
-								</div> <c:if test="${item.numOfSubitems > 0}">
-									<p class="completed">${item.numOfCheckedSubitems}/${item.numOfSubitems}Completedsubtasks</p>
-								</c:if>
+								</div> 
+								<p class="completed">
+									<c:set var="date" value="${!item.date.equals('1970-01-01')}"></c:set>
+									<c:if test="${item.numOfSubitems > 0}">
+										Completed subtasks: ${item.numOfCheckedSubitems}/${item.numOfSubitems}
+										<c:if test="${date}">
+											-							
+										</c:if> 
+									</c:if>
+									<c:if test="${date}">
+										Date: ${item.date}
+									</c:if>
+								</p>
 							</td>
 						</tr>
 					</c:forEach>

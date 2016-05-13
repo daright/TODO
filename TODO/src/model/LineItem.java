@@ -7,12 +7,21 @@ public class LineItem {
 	private String login;
 	private int numOfSubitems;
 	private int numOfCheckedSubitems;
+	private String date;
 
 	public LineItem(int iditem, String item, boolean checked, String login) {
 		this.iditem = iditem;
 		this.item = item;
 		this.checked = checked;
 		this.login = login;
+	}
+	
+	public LineItem(int iditem, String item, boolean checked, String login, String date) {
+		this.iditem = iditem;
+		this.item = item;
+		this.checked = checked;
+		this.login = login;
+		this.date = date;
 	}
 
 	public int getIditem() {
@@ -61,6 +70,14 @@ public class LineItem {
 
 	public void setNumOfCheckedSubitems(int numOfCheckedSubitems) {
 		this.numOfCheckedSubitems = numOfCheckedSubitems;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	@Override
