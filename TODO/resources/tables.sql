@@ -28,6 +28,3 @@ CREATE TABLE sublist(
     PRIMARY KEY (iditem, idparent, login),
     FOREIGN KEY (idparent, login) REFERENCES list(iditem, login)
 );
-
-INSERT INTO list VALUES (1, 'aaa', 0, 'asd', '2016-01-01');
-SELECT * from list;

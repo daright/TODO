@@ -42,7 +42,7 @@
 					<form action="list" method="post" class="form" role="form">
 						<div class="input-group">
 							<input type="hidden" name="action" value="add" /> 
-							<textarea rows=1 name="item" class="form-control" placeholder="Add something you wish to do..." autofocus ></textarea> 
+							<textarea rows=1 name="item" class="form-control" placeholder="Add something" autofocus ></textarea> 
 							<div class="addition">
 								<div class="input-group-addon date">Date:</div>
 							</div>
